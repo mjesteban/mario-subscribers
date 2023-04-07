@@ -10,13 +10,19 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@prettier/plugin-php": "^0.19.4",
         "axios": "^0.21",
+        "bootstrap": "^5.2.3",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "postcss": "^8.1.14",
+        "prettier": "^2.8.7",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.61.0",
+        "sass-loader": "^13.2.2"
     },
     "dependencies": {
-        "@prettier/plugin-php": "^0.19.4",
-        "prettier": "^2.8.7"
+        "datatables.net-bs5": "^1.13.4",
+        "datatables.net-responsive-bs5": "^2.4.1"
     }
 }
