@@ -63,6 +63,7 @@ _Some stuff that I'd continue if there had been more time_
 
 - With limited experience on TDD—I would start writing tests and API validation first such as converting the assignment instructions into test functions
 - DRY repeated code
+- Backend API Responses should have been JSON API
 - A more Design Pattern eccentric API service so that it is reusable through the other endpoints
 - Refactor until its simplest form
 - Add the backend tests
