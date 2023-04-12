@@ -3,9 +3,10 @@
 <x-form.field>
     <x-form.label name="{{ $name }}"/>
 
-    <input class="border border-gray-400 p-2 w-full rounded"
+    <input class="form-control"
            name="{{ $name }}"
            id="{{ $name }}"
+           placeholder="Enter the {{ $name }}"
            {{ $attributes(['value' => old($name)])}}
     >
 
