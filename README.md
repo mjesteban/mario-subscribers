@@ -8,7 +8,7 @@ The task is to create a simple PHP application for managing the subscribers of a
 - [Docker](https://docs.docker.com/get-docker/)
 
 ### Script
-No worries, no harmful hidden agendas. Just copy and paste on your installation directory.
+No worries, no harmful hidden agendas. Just hit up the terminal, go to preferred directory, and copy and paste!
 ```
 git clone https://github.com/mjesteban/mario-subscribers.git \
 	&& cd mario-subscribers \
