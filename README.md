@@ -44,7 +44,7 @@ Although I'm a neophyte when it comes to working with Laravel Mix, I was able to
 I started coding using Guzzle, but then noticed that Laravel's HTTP Client implementation was different. To avoid parsing overheads, I ended up utilizing the Laravel HTTP facade.
 
 ### Request Validations
-I did not use the required tag on the input forms so that validations are purely handled by the backend as well as relay the error responses from the MailerLite API.
+I did not use the required tag on the input forms as well as JavaScript validations so that validations are purely handled by the backend as well as relay the error responses from the MailerLite API.
 
 ### Code Organization and Standards
 The code is fairly self-documenting, crafted on my handy-dandy PHPStorm IDE, and used [Prettier](https://github.com/prettier/plugin-php) to conform to PSR-2 standards.
