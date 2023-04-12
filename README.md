@@ -21,7 +21,7 @@ git clone https://github.com/mjesteban/mario-subscribers.git \
 	&& alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail' \
 	&& cp .env.example .env \
 	&& sail up -d \
-	&& echo -e "\033[0;31m'Rivers know this: there is no hurry. We shall get there some day.' ― A.A. Milne, Winnie-the-Pooh\033[0m" \
+	&& echo -e "\033[0;31m'Rivers know this: there is no hurry. We shall get there some day.' ― A A. Milne, Winnie-the-Pooh\033[0m" \
 	&& sleep 5 \
 	&& sail npm install \
 	&& sail npm run prod \
