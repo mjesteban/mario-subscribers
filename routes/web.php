@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ApiKeyController;
+use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('app');
-});
+    return view('subscribers.index');
+})->middleware('mailerlite.auth');
+
+Route::resource('subscribers', SubscriberController::class)
+    ->middleware('mailerlite.auth')
+    ->except('show', 'index');
+
+Route::resource('api-keys', ApiKeyController::class)->only('create', 'store');
+
+Route::get('ml/subscribers', [SubscriberController::class, 'getSubscribers']);
