@@ -56,12 +56,12 @@ The code is fairly self-documenting, crafted on my handy-dandy PHPStorm IDE, and
 ## Pitfalls ⚠️
 
 - No way to just ping the MailerLite API, which led me to utilize one of its endpoints just to determine if the API key is valid
+- With limited experience on TDD— I would have started writing tests and API validations first such as converting the instructions into a set of test functions
 
 ## Roadmap 🚧
 
 _Some stuff that I'd continue if there had been more time_
 
-- With limited experience on TDD—I would start writing tests and API validation first such as converting the assignment instructions into test functions
 - DRY repeated code
 - Backend API Responses should have been JSON API
 - A more Design Pattern eccentric API service so that it is reusable through the other endpoints
