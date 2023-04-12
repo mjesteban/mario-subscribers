@@ -1,64 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# MailerLite - PHP Integration Developer Assignment
+_April 12th 2023_
 
-## About Laravel
+The task is to create a simple PHP application for managing the subscribers of a MailerLite account via the [MailerLite API](https://developers.mailerlite.com/docs/#mailerlite-api)._ Assignment should be completed within five business days.
+## Installation 🛠
+### Prerequisites
+- [Docker](https://docs.docker.com/get-docker/)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Script
+No worries, no harmful hidden agendas. Just copy and paste on your installation directory.
+```
+git clone https://github.com/mjesteban/mario-subscribers.git \
+	&& cd mario-subscribers \
+	&& docker run --rm \
+		-u "$(id -u):$(id -g)" \
+		-v $(pwd):/var/www/html \
+		-w /var/www/html \
+		laravelsail/php74-composer:latest \
+		composer install --ignore-platform-reqs \
+	&& alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail' \
+	&& cp .env.example .env \
+	&& sail up -d \
+	&& echo -e "\033[0;31m'Rivers know this: there is no hurry. We shall get there some day.' ― A.A. Milne, Winnie-the-Pooh\033[0m" \
+	&& sleep 5 \
+	&& sail npm install \
+	&& sail npm run prod \
+	&& sail mysql < import.sql \
+	&& echo -e "\033[32m'A goal is a dream with a finish line.' - Duke Ellington\033[0m | Link: http://localhost:14344"
+```
+> http://localhost:14344
+## Experience 🎡
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Introduction
+From the moment I received the instructions from the HR Manager, I dived right in. The instructions were well-written, so I didn't need any follow-up questions.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Working with Laravel Sail
+As a backend-focused developer, I had more in-depth experience with Docker or Docker Compose, but using Laravel's Sail was slightly easier. The challenging part was setting it up according to the requirements, but fiddling around with the docker-compose.yml, environment variables, and installation script was rewarding, knowing that the installation script worked just fine.
 
-## Learning Laravel
+### Frontend Work with Laravel Mix and DataTables
+Although I'm a neophyte when it comes to working with Laravel Mix, I was able to set it up after a while. Instead of relying on jQuery, I challenged myself by using modern ES6 JavaScript syntax for displaying data utilizing DataTables. I used Bootstrap 5.2 for the styling, selecting an open-sourced Bootswatch theme--[Darkly](https://bootswatch.com/darkly/).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### HTTP Client Implementation
+I started coding using Guzzle, but then noticed that Laravel's HTTP Client implementation was different. To avoid parsing overheads, I ended up utilizing the Laravel HTTP facade.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Request Validations
+I did not use the required tag on the input forms so that validations are purely handled by the backend as well as relay the error responses from the MailerLite API.
 
-## Laravel Sponsors
+### Code Organization and Standards
+The code is fairly self-documenting, crafted on my handy-dandy PHPStorm IDE, and used [Prettier](https://github.com/prettier/plugin-php) to conform to PSR-2 standards.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
+> As part of the requirement, I've disabled CSRF by commenting it out on the Kernel. No migrations done since the .sql file is already part of
+> the installation. It also does not involve user authentication.
 
-### Premium Partners
+## Pitfalls ⚠️
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- No way to just ping the MailerLite API, which led me to utilize one of its endpoints just to determine if the API key is valid
 
-## Contributing
+## Roadmap 🚧
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+_Some stuff that I'd continue if there had been more time_
 
-## Code of Conduct
+- With limited experience on TDD—I would start writing tests and API validation first such as converting the assignment instructions into test functions
+- DRY repeated code
+- A more Design Pattern eccentric API service so that it is reusable through the other endpoints
+- Refactor until its simplest form
+- Add the backend tests
+- Strip unnecessary dependencies caused by default Laravel installation
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Acknowledgments 🙌
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The specification for this programming test came from [MailerLite](https://www.mailerlite.com/).
