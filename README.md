@@ -2,7 +2,7 @@
 # MailerLite - PHP Integration Developer Assignment
 _April 12th 2023_
 
-The task is to create a simple PHP application for managing the subscribers of a MailerLite account via the [MailerLite API](https://developers.mailerlite.com/docs/#mailerlite-api)._ Assignment should be completed within five business days.
+The task is to create a simple PHP application for managing the subscribers of a MailerLite account via the [MailerLite API](https://developers.mailerlite.com/docs/#mailerlite-api). Assignment should be completed within five business days.
 ## Installation 🛠
 ### Prerequisites
 - [Docker](https://docs.docker.com/get-docker/)
